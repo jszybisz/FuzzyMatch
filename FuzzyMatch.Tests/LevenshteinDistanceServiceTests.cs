@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using JacekSzybisz.FuzzyMatch.Algorithms.LevenshteinDistance;
+using RandomStringCreator;
 using Xunit;
 
 namespace JacekSzybisz.FuzzyMatch.Tests
@@ -45,6 +50,31 @@ namespace JacekSzybisz.FuzzyMatch.Tests
 
             Assert.Equal(expectedState, result.State);
           
+        }
+
+        [Fact]
+        public void GetLevenshteinDistance_Performance()
+        {
+            Random rnd = new Random();
+
+            var randomStrings = new List<String>();
+            for (int i = 0; i < 100; i++)
+            {
+                randomStrings.Add(new StringCreator().Get(50));
+            }
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+               
+            for (int i =0; i < 100000; i++)
+            {
+                _service.GetLevenshteinDistance(randomStrings[rnd.Next(99)], randomStrings[rnd.Next(99)], 30);
+
+            }
+            stopwatch.Stop();
+        
+            Assert.True(stopwatch.Elapsed.TotalSeconds < 10);
+
         }
     }
 }
