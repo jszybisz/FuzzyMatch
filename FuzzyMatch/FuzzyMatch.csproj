@@ -18,6 +18,7 @@ In information theory, linguistics and computer science, the Levenshtein distanc
 https://en.wikipedia.org/wiki/Levenshtein_distance
 
 Levenshtein distance may also be referred to as edit distance, although that term may also denote a larger family of distance metrics.[2]:32 It is closely related to pairwise string alignments.</Description>
+    <PackageTags>Fuzzy Match Levenshtein Distance Search String Similarity Matching Comparison</PackageTags>
   </PropertyGroup>
 
 </Project>
