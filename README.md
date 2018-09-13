@@ -7,7 +7,7 @@ In information theory, linguistics and computer science, the Levenshtein distanc
 https://en.wikipedia.org/wiki/Levenshtein_distance
 
 #### Usage
-```
+```csharp
 using System;
 using JacekSzybisz.FuzzyMatch;
 using JacekSzybisz.FuzzyMatch.Algorithms.LevenshteinDistance;
